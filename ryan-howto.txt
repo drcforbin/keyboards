@@ -1,0 +1,32 @@
+# initial setup for build and flashing
+./link
+cd qmk
+
+# update submodules
+make git-submodule
+
+#git submodule update --init --recursive
+
+python -m http.server 8000
+
+# planck rev4
+make planck/rev4:rcw
+
+# put kb into reset
+sudo dfu-programmer atmega32u4 erase
+sudo dfu-programmer atmega32u4 flash planck_rev4_rcw.hex
+sudo dfu-programmer atmega32u4 reset
+
+# planck rev6
+make planck/rev6:rcw:dfu-util
+
+:%!python -m json.tool
+
+# crkbd. these need to be run in the 'qmk'
+# dir, and as root (could change priviledges
+# or something, but I'm lazy
+make crkbd:default:avrdude # default firmware
+make crkbd:rcw             # something not tested
+                           # when building the LP
+make crkbd:rcw:avrdude     # run this one
+
