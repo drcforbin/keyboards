@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_planck_grid(
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
     CTL_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,     KC_J,    KC_K,    KC_L,    KC_SCLN, CTL_ENT,
-    KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC,
+    SC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SC_RSPC,
     GUI_L,   ALT_L,   KC_LT,   _______, LOWER,   KC_SPC,  KC_BSPC,  RAISE,   _______, KC_GT,   ALT_R,   GUI_R
 ),
 
@@ -60,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, GUIX(1), GUIX(2), GUIX(3), GUIX(4), GUIX(5), GUIX(6), GUIX(7), GUIX(8), GUIX(9), GUIX(0), KC_SLCK,
-    KC_LCTL, RESET,   _______, _______, _______, _______, GUIX(H), GUIX(J), GUIX(K), GUIX(L), _______, _______,
+    _______, GUIX(1), GUIX(2), GUIX(3), GUIX(4), GUIX(5), GUIX(6), GUIX(7), GUIX(8), GUIX(9), GUIX(0), KC_SCRL,
+    KC_LCTL, QK_RBT,  _______, _______, _______, _______, GUIX(H), GUIX(J), GUIX(K), GUIX(L), _______, _______,
     KC_LSFT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, GUIX(ENT),
     KC_LGUI, KC_LALT, _______, _______, _______, _______, _______, _______, _______, _______, KC_PSCR, KC_PAUS
 )

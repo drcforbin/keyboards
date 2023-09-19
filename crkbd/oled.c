@@ -189,11 +189,11 @@ void render_frame(void) {
     }
 }
 
-void oled_task_user(void) {
+bool oled_task_user(void) {
     // sleep if it has been long enough since we last got a char
     if (timer_elapsed32(oled_sleep_timer) > SLEEP_TIMEOUT) {
         oled_off();
-        return;
+        return false;
     } else {
         oled_on();
     }
@@ -209,6 +209,8 @@ void oled_task_user(void) {
         anim_timer = timer_read();
         render_frame();
     }
+
+    return false;
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
